@@ -1,0 +1,32 @@
+
+apt install ceph-mgr-dashboard (on all service manager nodes)
+
+ceph mgr module enable dashboard
+
+ceph config-key set mgr/dashboard/server_addr ::
+ceph dashboard create-self-signed-cert
+
+
+echo "mypasswordhere" > /root/cephdashpass.txt 
+ceph dashboard ac-user-create cephdash -i /root/cephdashpass.txt administrator
+
+
+#ceph config set mgr mgr/dashboard/<nodeN>/server_addr <private_IP_N>
+#ceph config set mgr mgr/dashboard/<nodeN>/server_port 8080
+#ceph config set mgr mgr/dashboard/ssl false
+
+ceph mgr module disable dashboard
+ceph mgr module enable dashboard
+
+systemctl restart ceph-mgr@[servername].service
+
+Then https://[IP or FQDN]:8443 or http://[IP or FQDN]:8080
+
+If you only use Ceph RBD, don't bother with other services
+ceph dashboard feature disable cephfs iscsi mirroring rgw
+
+
+Verify some settings : 
+ceph dashboard ac-user-show
+ceph dashboard ac-role-show
+ceph dashboard feature status

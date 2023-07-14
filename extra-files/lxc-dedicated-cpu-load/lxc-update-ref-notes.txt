@@ -1,0 +1,31 @@
+https://forum.proxmox.com/threads/lxc-loadavg.44463/#post-239269
+
+/lib/systemd/system/lxcfs.service
+
+This is now resolved. Whether to enable it default or not, will be decided later.
+
+Willing users can enable this behaviour by editing:
+
+Code:
+/lib/systemd/system/lxcfs.service
+
+and by adding the `-l` flag in ExecStart. Then restart service and containers.
+
+
+/etc/systemd/system/lxcfs.service.d/override.conf
+
+
+execute systemctl edit lxcfs
+
+type following and save the file:
+
+[Service]
+ExecStart=
+ExecStart=/usr/bin/lxcfs -l /var/lib/lxcfs/
+
+this will get automaticaly saved to /etc/systemd/system/lxcfs.service.d/override.conf file
+note that the ExecStart= line deletes original definition, otherwise there would be two ExecStart statements after override is applied
+to revert to default execute systemctl revert lxcfs
+
+systemctl restart lxcfs.service
+
