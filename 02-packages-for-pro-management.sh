@@ -16,6 +16,10 @@ libpve-network-perl ifupdown2 openvswitch-switch apt-transport-https \
 debconf-utils pwgen iftop htop multitail lm-sensors vnstat \
 frr frr-pythontools 
 
+
+#sed -i "s/;date.timezone =/date\.timezone \= \'Asia\/Kolkata\'/" /etc/php/8.2/cli/php.ini
+sed -i "s/error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT/error_reporting = E_ERROR/" /etc/php/8.2/cli/php.ini
+
 #update Container templates list 
 pveam update
 

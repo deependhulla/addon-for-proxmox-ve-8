@@ -12,6 +12,7 @@ touch /etc/rc.local
 printf '%s\n' '#!/bin/bash'  | tee -a /etc/rc.local 1>/dev/null
 echo "sysctl -w net.ipv6.conf.all.disable_ipv6=1" >>/etc/rc.local
 echo "sysctl -w net.ipv6.conf.default.disable_ipv6=1" >> /etc/rc.local
+echo "sysctl vm.swappiness=10" >> /etc/rc.local
 echo "exit 0" >> /etc/rc.local
 chmod 755 /etc/rc.local
 
@@ -26,7 +27,7 @@ echo " ExecStart=/etc/rc.local start" >> /etc/systemd/system/rc-local.service
 echo " TimeoutSec=0" >> /etc/systemd/system/rc-local.service
 echo " StandardOutput=tty" >> /etc/systemd/system/rc-local.service
 echo " RemainAfterExit=yes" >> /etc/systemd/system/rc-local.service
-echo " SysVStartPriority=99" >> /etc/systemd/system/rc-local.service
+##echo " SysVStartPriority=99" >> /etc/systemd/system/rc-local.service
 echo "" >> /etc/systemd/system/rc-local.service
 echo "[Install]" >> /etc/systemd/system/rc-local.service
 echo " WantedBy=multi-user.target" >> /etc/systemd/system/rc-local.service
@@ -34,6 +35,10 @@ echo " WantedBy=multi-user.target" >> /etc/systemd/system/rc-local.service
 systemctl enable rc-local
 systemctl start rc-local
 
+## finetune for heavy log
+#sed -i "s/#RateLimitIntervalSec=30s/RateLimitIntervalSec=0/"  /etc/systemd/journald.conf
+#sed -i "s/#RateLimitBurst=10000/RateLimitBurst=0/"  /etc/systemd/journald.conf
+#systemctl restart systemd-journald
 
 ## for SDN to setup
 echo "" >> /etc/network/interfaces
@@ -71,6 +76,9 @@ echo "alias ll='ls -l --color=auto'" >> /etc/bash.bashrc
 echo "alias ls='ls --color=auto'" >> /etc/bash.bashrc
 echo "alias mv='mv -i'" >> /etc/bash.bashrc
 echo "alias rm='rm -i'" >> /etc/bash.bashrc
+echo "export EDITOR=vi" >> /etc/bash.bashrc
+#echo "export LC_CTYPE=en_US.UTF-8" >> /etc/bash.bashrc
+#echo "export LC_ALL=en_US.UTF-8" >> /etc/bash.bashrc
 
 ## for crontab 
 export EDITOR=vim
