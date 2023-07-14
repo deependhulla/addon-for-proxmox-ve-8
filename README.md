@@ -15,6 +15,8 @@ Addon For Proxmox VE 8.0 for extra management and quicker operation for IT Admin
 - iptraf for bandwidth and traffic monitoring
 - elinks for console browsing
 - curl for some downloading
+- ipmitool for IKVM Management
+- lm-sensors for getting CPU temp on main-host and other info
 - net-tools, old style tools like ifconfig
 - php-cli, for easy and fast scripting tools
 - sendemail, a command line smtp sendemail
