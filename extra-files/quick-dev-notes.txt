@@ -1,0 +1,26 @@
+
+GIT-REPO : https://github.com/deependhulla/addon-for-proxmox-ve-8
+
+On All SuperMicro-Server from folder : /opt/addon-for-proxmox-ve-8
+Run below scripts in given same-order.
+
+extra-files/01-development-repo-setup-basic-proxmox.sh
+extra-files/02-development-repo-setup-ceph.sh
+
+01-tunning-for-ease-of-use-for-it-admin.sh
+02-packages-for-pro-management.sh
+03-update-microcode-for-cpu-updates.sh
+04-ceph-cluster-enterprise-packages.sh
+extra-files/extra-msg-update.sh
+
+Below Script only on ANY-ONE-SERVER ONLY for download
+
+downloads/01-get-virto-drivers-for-windows.sh
+downloads/02-get-debian-and-ubuntu-server-iso.sh
+downloads/03-get-lxc-container-debian-and-ubuntu-server.sh
+downloads/04-get-debian-and-ubuntu-desktop-iso.sh
+
+Below Script only on ANY-ONE-SERVER ONLY for extra admin use and desktop
+extra-files/python3-addon-packages-for-build-for-extra-tools.sh
+extra-files/webmin-setup-for-pro-linux-management.sh
+extra-files/make-proxmox-as-workstation-with-gui-and-browser.sh
