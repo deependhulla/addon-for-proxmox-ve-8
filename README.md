@@ -10,6 +10,7 @@ Addon For Proxmox VE 8.0 for extra management and quicker operation for IT Admin
 - Git version-management tool
 - MC File-Manager and Editor
 - VIM Editor for colors and more vi features
+- pssh for Parallel versions of SSH-based tools
 - screen tool for background terminal session work
 - ethtool to check ethernet speed and link
 - iptraf for bandwidth and traffic monitoring
