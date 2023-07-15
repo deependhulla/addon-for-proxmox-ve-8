@@ -11,7 +11,7 @@ apt -y dist-upgrade
 ## The openvswitch frr package allows you to create virtual networks (VNets) at the datacenter level with SDN.
 ### other Package openvswitch various-top
 apt -y install git mc iptraf screen vim ethtool net-tools  wget elinks dos2unix \
-arping dnsutils telnet curl ipmitool php-cli sendemail liblocale-po-perl \
+arping dnsutils telnet curl ipmitool php-cli php-curl sendemail liblocale-po-perl \
 libpve-network-perl ifupdown2 openvswitch-switch apt-transport-https \
 debconf-utils pwgen iftop htop multitail lm-sensors vnstat \
 frr frr-pythontools 
