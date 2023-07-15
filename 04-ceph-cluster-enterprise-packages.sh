@@ -1,10 +1,16 @@
 #!/bin/bash
+# Check if ceph 17 is already installed or not ..if not install
 
-## keep ceph default package installed
-echo 'Y' | pveceph install
-#
-### https://pve.proxmox.com/wiki/Ceph_Pacific_to_Quincy
-##sed -i 's/pacific/quincy/' /etc/apt/sources.list.d/ceph.list
-#
-apt update
-apt -y full-upgrade
+if [[ $(dpkg -l ceph | grep 17)  ]]; then
+	echo "Ceph Version Installed"
+	dpkg -l ceph | grep 17
+else
+    echo "Installing Ceph packages"
+    echo 'Y' | pveceph install
+    apt update
+    apt -y full-upgrade
+fi
+
+
+
+
