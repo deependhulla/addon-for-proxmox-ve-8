@@ -16,6 +16,10 @@ printf '%s\n' '#!/bin/bash'  | tee -a /etc/rc.local 1>/dev/null
 echo "sysctl -w net.ipv6.conf.all.disable_ipv6=1" >>/etc/rc.local
 echo "sysctl -w net.ipv6.conf.default.disable_ipv6=1" >> /etc/rc.local
 echo "sysctl vm.swappiness=10" >> /etc/rc.local
+echo "echo \"$[12 * 1024*1024*1024 - 1]\" >/sys/module/zfs/parameters/zfs_arc_min" >> /etc/rc.local
+echo "echo \"$[12 * 1024*1024*1024]\" >/sys/module/zfs/parameters/zfs_arc_max" >> /etc/rc.local
+
+
 echo "exit 0" >> /etc/rc.local
 chmod 755 /etc/rc.local
 
