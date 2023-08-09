@@ -13,7 +13,7 @@ apt -y dist-upgrade
 apt -y install git mc iptraf screen vim ethtool net-tools  wget elinks dos2unix \
 arping dnsutils telnet curl ipmitool php-cli php-curl sendemail liblocale-po-perl \
 libpve-network-perl ifupdown2 openvswitch-switch apt-transport-https \
-gnupg2 debconf-utils pwgen iftop htop multitail lm-sensors vnstat pigz \
+gnupg2 debconf-utils pwgen iftop htop iotop multitail lm-sensors vnstat pigz \
 pssh frr frr-pythontools 
 
 
