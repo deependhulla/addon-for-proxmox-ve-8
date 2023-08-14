@@ -6,8 +6,9 @@ if [[ $(dpkg -l ceph | grep 17)  ]]; then
 	dpkg -l ceph | grep 17
 else
     echo "Installing Ceph packages"
-    echo 'Y' | pveceph install
+    pveceph install
     apt update
+    apt -y upgrade
     apt -y full-upgrade
 fi
 
