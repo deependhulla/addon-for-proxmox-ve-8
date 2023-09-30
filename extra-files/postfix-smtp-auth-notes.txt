@@ -1,0 +1,17 @@
+
+in /etc/postfix/main.cf
+inet_protocols = ipv4
+smtp_use_tls=yes
+relayhost = [smtp.office365.com]:587
+smtp_sasl_password_maps = hash:/etc/postfix/relay_passwd
+smtp_sasl_auth_enable = yes
+smtpd_sasl_auth_enable = yes
+smtp_sasl_security_options = noanonymous
+smtp_generic_maps = hash:/etc/postfix/mapfrom
+
+in /etc/postfix/relay_passwd
+[onlinesmtp.abc.com]:587 onlinesmtp@abc.com:yourpasshere
+
+in /etc/postfix/mapfrom
+root@pve01.test.com               rootpve01@test.com
+
