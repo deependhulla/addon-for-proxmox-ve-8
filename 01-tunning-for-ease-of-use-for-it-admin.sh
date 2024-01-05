@@ -15,7 +15,7 @@ touch /etc/rc.local
 printf '%s\n' '#!/bin/bash'  | tee -a /etc/rc.local 1>/dev/null
 echo "sysctl -w net.ipv6.conf.all.disable_ipv6=1" >>/etc/rc.local
 echo "sysctl -w net.ipv6.conf.default.disable_ipv6=1" >> /etc/rc.local
-echo "sysctl vm.swappiness=10" >> /etc/rc.local
+echo "sysctl vm.swappiness=0" >> /etc/rc.local
 echo "echo \"$[12 * 1024*1024*1024 - 1]\" >/sys/module/zfs/parameters/zfs_arc_min" >> /etc/rc.local
 echo "echo \"$[12 * 1024*1024*1024]\" >/sys/module/zfs/parameters/zfs_arc_max" >> /etc/rc.local
 
@@ -47,9 +47,9 @@ systemctl start rc-local
 #sed -i "s/#RateLimitBurst=10000/RateLimitBurst=0/"  /etc/systemd/journald.conf
 #systemctl restart systemd-journald
 
-## for SDN to setup
-echo "" >> /etc/network/interfaces
-echo "source /etc/network/interfaces.d/*" >> /etc/network/interfaces
+## for SDN to setup not need in 8.1
+#echo "" >> /etc/network/interfaces
+#echo "source /etc/network/interfaces.d/*" >> /etc/network/interfaces
 
 
 ## ssh Keep Alive
@@ -84,6 +84,8 @@ echo "alias ls='ls --color=auto'" >> /etc/bash.bashrc
 echo "alias mv='mv -i'" >> /etc/bash.bashrc
 echo "alias rm='rm -i'" >> /etc/bash.bashrc
 echo "export EDITOR=vi" >> /etc/bash.bashrc
+echo "export HISTTIMEFORMAT=\"%d/%m/%y %T \" " >> /etc/bash.bashrc
+
 #echo "export LC_CTYPE=en_US.UTF-8" >> /etc/bash.bashrc
 #echo "export LC_ALL=en_US.UTF-8" >> /etc/bash.bashrc
 
