@@ -1,6 +1,11 @@
-# rum "nvme list" ... to chekc if nvme drivers are there.
+# rum "nvme list" ... to check if nvme drivers are there. or use "nvme list-subsys"
 
 ## follow guide for io throughput test based on fio from 
 easy to understand guide in https://online.technomail.in/groupoffice/#note/4701:~:text=https%3A//portal.nutanix.com/page/documents/kbs/details%3FtargetId%3DkA07V000000LX7xSAG
 
 ## for Windows OS Download fio exe from : : https://github.com/axboe/fio/releases
+
+## command to check if its SATA or NVME 
+hdparm -I /dev/sda | grep -i SATA
+## get Storage info
+lshw -C storage
