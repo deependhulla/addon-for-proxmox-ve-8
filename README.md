@@ -1,5 +1,5 @@
 # addon-for-proxmox-ve-8
-Addon For Proxmox VE 8.0 for extra management and quicker operation for IT Admin
+Addon For Proxmox VE 8.0 and 8.1 for extra management and quicker operation for IT Admin
 
 - updated via 02-update-bash-tools.sh For better console performance
 - interactive shell like RHEL/CentOS
