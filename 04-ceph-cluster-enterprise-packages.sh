@@ -1,9 +1,9 @@
 #!/bin/bash
-# Check if ceph 17 is already installed or not ..if not install
+# Check if ceph 18 is already installed or not ..if not install
 
-if [[ $(dpkg -l ceph | grep 17)  ]]; then
+if [[ $(dpkg -l ceph | grep 18)  ]]; then
 	echo "Ceph Version Installed"
-	dpkg -l ceph | grep 17
+	dpkg -l ceph | grep 18
 else
     echo "Installing Ceph packages"
     pveceph install
