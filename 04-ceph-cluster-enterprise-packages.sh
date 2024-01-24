@@ -6,7 +6,7 @@ if [[ $(dpkg -l ceph | grep 18)  ]]; then
 	dpkg -l ceph | grep 18
 else
     echo "Installing Ceph packages"
-    pveceph install
+    pveceph install --version reef
     apt update
     apt -y upgrade
     apt -y full-upgrade
