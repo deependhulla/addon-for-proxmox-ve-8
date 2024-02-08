@@ -14,7 +14,7 @@ apt -y install git mc iptraf screen vim ethtool net-tools  wget elinks dos2unix 
 arping dnsutils telnet curl ipmitool php-cli php-curl sendemail liblocale-po-perl \
 libpve-network-perl ifupdown2 openvswitch-switch apt-transport-https \
 gnupg2 debconf-utils pwgen iftop htop iotop multitail lm-sensors vnstat pigz \
-pssh frr frr-pythontools libsasl2-modules rsyslog pv fio iperf lshw
+pssh frr frr-pythontools libsasl2-modules rsyslog pv fio iperf lshw nvme-cli
 
 
 #sed -i "s/;date.timezone =/date\.timezone \= \'Asia\/Kolkata\'/" /etc/php/8.2/cli/php.ini
