@@ -14,8 +14,15 @@ apt -y install git mc iptraf screen vim ethtool net-tools  wget elinks dos2unix 
 arping dnsutils telnet curl ipmitool php-cli php-curl sendemail liblocale-po-perl \
 libpve-network-perl ifupdown2 openvswitch-switch apt-transport-https \
 gnupg2 debconf-utils pwgen iftop htop iotop multitail lm-sensors vnstat pigz \
-pssh frr frr-pythontools libsasl2-modules rsyslog pv fio iperf lshw nvme-cli
+pssh frr frr-pythontools libsasl2-modules rsyslog pv lsscsi fio iperf lshw nvme-cli
 
+#apt-get install ifstat nicstat dstat sysstat
+
+#apt-get install ledmon
+# https://serverfault.com/questions/64239/physically-identify-the-failed-hard-drive
+#ledctl locate=/dev/sda
+#ledctl locate_off=/dev/sda
+#ledctl locate=/dev/disk/by-id/[drive-id]
 
 #sed -i "s/;date.timezone =/date\.timezone \= \'Asia\/Kolkata\'/" /etc/php/8.2/cli/php.ini
 sed -i "s/error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT/error_reporting = E_ERROR/" /etc/php/8.2/cli/php.ini
