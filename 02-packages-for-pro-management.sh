@@ -13,7 +13,7 @@ apt -y dist-upgrade
 apt -y install git mc iptraf screen vim ethtool net-tools  wget elinks dos2unix \
 arping dnsutils telnet curl ipmitool php-cli php-curl sendemail liblocale-po-perl \
 libpve-network-perl ifupdown2 zfs-zed nmap openvswitch-switch apt-transport-https \
-gnupg2 debconf-utils pwgen iftop htop iotop multitail lm-sensors vnstat pigz \
+numactl gnupg2 debconf-utils pwgen iftop htop iotop multitail lm-sensors vnstat pigz \
 pssh frr frr-pythontools libsasl2-modules rsyslog pv lsscsi fio iperf lshw nvme-cli
 
 #apt-get install cmake flex libpciaccess-dev bison libx11-dev libxext-dev libxml2-dev libvdpau-dev python3-dev cython3 pkg-config
