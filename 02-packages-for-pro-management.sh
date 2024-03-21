@@ -14,7 +14,21 @@ apt -y install git mc iptraf screen vim ethtool net-tools  wget elinks dos2unix 
 arping dnsutils telnet curl ipmitool php-cli php-curl sendemail liblocale-po-perl \
 libpve-network-perl ifupdown2 zfs-zed nmap openvswitch-switch apt-transport-https \
 numactl gnupg2 debconf-utils pwgen iftop htop iotop multitail lm-sensors vnstat pigz \
-pssh frr frr-pythontools libsasl2-modules rsyslog pv lsscsi fio iperf lshw nvme-cli
+pssh frr frr-pythontools libsasl2-modules linux-cpupower rsyslog pv lsscsi fio iperf lshw nvme-cli
+
+#utilities for devices using the SCSI command set
+#apt-get install sg3-utils 
+
+#apt install linux-cpupower tuned tuned-utils tuned-utils-systemtap
+#tuned-adm profile network-latency
+#cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+#cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
+
+#cpu mitgation - bootloader
+#vi /etc/kernel/cmdfile -> root=ZFS=rpool/ROOT/pve-1 boot=zfs mitigations=off intel_iommu=on iommu=pt
+#proxmox-boot-tool refresh
+#reboot
+#lscpu
 
 #apt-get install cmake flex libpciaccess-dev bison libx11-dev libxext-dev libxml2-dev libvdpau-dev python3-dev cython3 pkg-config
 #apt-get install nfs-kernel-server
