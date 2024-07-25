@@ -16,6 +16,8 @@ printf '%s\n' '#!/bin/bash'  | tee -a /etc/rc.local 1>/dev/null
 echo "sysctl -w net.ipv6.conf.all.disable_ipv6=1" >>/etc/rc.local
 echo "sysctl -w net.ipv6.conf.default.disable_ipv6=1" >> /etc/rc.local
 echo "sysctl vm.swappiness=0" >> /etc/rc.local
+echo "Setting the initial default idle-delay to -1 will prevent any autosuspend of any USB device"  >> /etc/rc.local
+echo "echo -1 >/sys/module/usbcore/parameters/autosuspend">> /etc/rc.local
 echo "echo \"$[12 * 1024*1024*1024 - 1]\" >/sys/module/zfs/parameters/zfs_arc_min" >> /etc/rc.local
 echo "echo \"$[12 * 1024*1024*1024]\" >/sys/module/zfs/parameters/zfs_arc_max" >> /etc/rc.local
 
