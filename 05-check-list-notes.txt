@@ -9,3 +9,10 @@ portal.nutanix.com/page/documents/kbs/details%3FtargetId%3DkA07V000000LX7xSAG
 hdparm -I /dev/sda | grep -i SATA
 ## get Storage info
 lshw -C storage
+
+
+## command to create varioous class based replication crush ready before creating ceph-pool
+
+ceph osd crush rule create-replicated replicated_hdd default host hdd
+ceph osd crush rule create-replicated replicated_ssd default host ssd
+ceph osd crush rule create-replicated replicated_nvme default host nvme
