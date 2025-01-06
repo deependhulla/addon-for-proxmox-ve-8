@@ -1,6 +1,6 @@
-# Addon for Proxmox VE 8.0 & 8.1
+# Addon for Proxmox VE 8.x
 
-This repository provides a collection of scripts and tools designed to enhance management and streamline operations for IT administrators using Proxmox VE 8.0 and 8.1. These addons focus on improving console performance, providing essential utilities, and optimizing administrative workflows.
+This repository provides a collection of scripts and tools designed to enhance management and streamline operations for IT administrators using Proxmox VE 8.x. These addons focus on improving console performance, providing essential utilities, and optimizing administrative workflows.
 
 ## Features
 
