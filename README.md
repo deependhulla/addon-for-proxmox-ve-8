@@ -19,6 +19,17 @@ This repository provides a collection of scripts and tools designed to enhance m
 - **telnet**: Legacy tool for connecting to remote systems via Telnet protocol.
 - **sysstat**: Performance monitoring tools (e.g., `iostat`, `sar`).
 - **unzip**: Utility for extracting `.zip` files.
+- **ethtool**: for Ethernet speed and link diagnostics.
+- **iptraf**: for traffic and bandwidth monitoring.
+- **dnsutils**: for DNS troubleshooting.
+- **ipmitool**: for IKVM management.
+- **lm-sensors**: for monitoring CPU temperature and other hardware stats.
+- **pssh**: for parallel SSH operations.
+- **screen**: for persistent terminal sessions.
+- **mc**: file manager for streamlined file navigation.
+- **curl**: for downloading resources.
+- **vim**: editor with enhanced features.
+- **php-cli**: for PHP-based scripting.
 - **php-curl**: PHP extension for making HTTP requests with cURL.
 - **liblocale-po-perl**: Perl module for working with Gettext `.po` files.
 - **libpve-network-perl**: Proxmox-specific Perl module for managing networks.
@@ -36,6 +47,9 @@ This repository provides a collection of scripts and tools designed to enhance m
 - **iotop**: Tool to display real-time I/O usage by processes.
 - **multitail**: View multiple log files in a single terminal window.
 - **dnsmasq**: Lightweight DNS forwarder and DHCP server.
+- **git**: for version management.
+- **dos2unix**: to convert Windows/DOS content to Unix format.
+- **sendemail**: for command-line SMTP email sending.
 - **lm-sensors**: Hardware monitoring tools for CPU and system temperatures.
 - **vnstat**: Network traffic monitor that logs bandwidth usage.
 - **pigz**: Parallel implementation of gzip for faster compression.
